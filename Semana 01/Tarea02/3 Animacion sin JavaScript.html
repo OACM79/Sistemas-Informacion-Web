@@ -1,0 +1,70 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Itam 4 de la Tarea 02_Realizar tres ejemplos utilizando animaciones con CSS sin javascript -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones CSS</title>
+    <style>
+        /* Animación 1: Cambio de color */
+        .color-change {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: colorChange 2s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            from { background-color: red; }
+            to { background-color: blue; }
+        }
+
+        /* Animación 2: Traslación y rotación */
+        .move-rotate {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            animation: moveRotate 3s infinite linear;
+        }
+
+        @keyframes moveRotate {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(100px, 100px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* Animación 3: Escala y opacidad */
+        .scale-fade {
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+            animation: scaleFade 2.5s infinite ease-in-out;
+        }
+
+        @keyframes scaleFade {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animaciones con CSS sin JavaScript</h1>
+
+    <h2>Ejemplo 1: Cambio de Color</h2>
+    <div class="color-change"></div>
+
+    <h2>Ejemplo 2: Traslación y Rotación</h2>
+    <div class="move-rotate"></div>
+
+    <h2>Ejemplo 3: Escala y Opacidad</h2>
+    <div class="scale-fade"></div>
+</body>
+</html>

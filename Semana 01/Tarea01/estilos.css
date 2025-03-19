@@ -1,0 +1,12 @@
+/*
+ 	Maestría en Electrónica - Enfasis TIC
+	Sistemas de Información Web
+    
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+
+    Establece un color de fondo para toda la página */
+
+body {
+    background-color: lightgreen; /* Cambia el color de fondo a verde */
+}

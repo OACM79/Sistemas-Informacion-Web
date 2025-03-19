@@ -1,0 +1,86 @@
+<!-- 
+ 	  Maestría en Electrónica - Enfasis TIC
+	  Materia: Sistemas de Información Web
+
+	  Alumno: Oscar Aureliano Caballero Mendoza
+	  CI: 2.540.533 
+    Ejercicio 09: Crear y estilizar una tabla para mostrar datos de manera atractiva. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 09</title>
+  <style>
+    table {
+      width: 80%; 
+      border-collapse: collapse; 
+      font-family: Arial, sans-serif; /* Fuente de la tabla */
+    }
+
+    th, td {
+      border: 1px solid #0a0000; /* Borde para las celdas */
+      padding: 8px; 
+      text-align: center; 
+    }
+
+    th {
+      background-color: yellowgreen; /* Color de fondo para las celdas de encabezado */
+      font-weight: bold; /* Texto en negrita para encabezados */
+    }
+
+    /* Estilo para filas alternas */
+    tr:nth-child(even) {
+      background-color: rgb(153, 151, 151); /* Color de fondo para filas pares */
+    }
+
+    /* Estilo al pasar el mouse por encima de las filas */
+    tr:hover {
+      background-color: #06b7ce; /* Color de fondo al pasar el mouse */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Datos de Empleados</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Ciudad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jorge Pereira</td>
+        <td>30</td>
+        <td>Asunción</td>
+      </tr>
+      <tr>
+        <td>María Acuña</td>
+        <td>25</td>
+        <td>San Lorenzo</td>
+      </tr>
+      <tr>
+        <td>Carlos Caballero</td>
+        <td>37</td>
+        <td>Villarrica</td>
+      </tr>
+      <tr>
+        <td>Ana Martínez</td>
+        <td>25</td>
+        <td>Carapeguá</td>
+      </tr>
+      <tr>
+        <td>Jorge Sánchez</td>
+        <td>38</td>
+        <td>Ciudad del Este</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

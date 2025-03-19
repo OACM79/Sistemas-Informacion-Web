@@ -1,0 +1,51 @@
+<!-- 
+ 	  Maestría en Electrónica - Enfasis TIC
+	  Materia: Sistemas de Información Web
+
+	  Alumno: Oscar Aureliano Caballero Mendoza
+	  CI: 2.540.533 
+    Ejercicio 08: Utilizar CSS en listas y aplicar márgenes y rellenos. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 08</title>
+  <style>
+    /* Estilos para la lista desordenada */
+    ul {
+      list-style-type: square; 
+      padding: 20px; 
+    }
+
+    /* Estilos para los elementos de la lista */
+    li {
+      color: blue; 
+      font-size: 16px; 
+      border: 1px solid #0a0000; 
+      margin-bottom: 10px; 
+      padding: 10px; 
+    }
+
+    /* Estilos para el ícono de la lista */
+    ul li::marker {
+      color: red; 
+      font-size: 1.2em; 
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Lista de Vehículos: </h2>
+
+  <ul>
+    <li>AUDI</li>
+    <li>BMW</li>
+    <li>MERCEDES BENZ</li>
+    <li>TOYOTA</li>
+    <li>KIA</li>
+  </ul>
+
+</body>
+</html>
