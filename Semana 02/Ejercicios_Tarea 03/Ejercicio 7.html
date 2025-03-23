@@ -1,0 +1,72 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Ejercicio 7: Hacer una página que, ingresando un monto de dinero que represente el costo de un producto incluyendo IVA, imprima el valor
+    del mismo del producto (sin IVA) y el valor del IVA (10 %) en un mensaje -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 7</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contenedor {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Precio sin IVA</h1>
+    <div id="contenedor">
+        <label for="precioConIVA">Precio con IVA (10%):</label>
+        <input type="number" id="precioConIVA" placeholder="Ingrese el precio con IVA">
+        <button id="calcular">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        document.getElementById('calcular').addEventListener('click', function() {
+            let precioConIVA = parseFloat(document.getElementById('precioConIVA').value);
+
+            if (!isNaN(precioConIVA)) {
+                let precioSinIVA = precioConIVA / 1.10;
+                let iva = precioConIVA - precioSinIVA;
+
+                let mensaje = "Precio sin IVA: " + precioSinIVA.toFixed(0) + ". IVA (10%): " + iva.toFixed(0);
+                
+                document.getElementById('resultado').textContent = mensaje;
+            } else {
+                document.getElementById('resultado').textContent = "Por favor, ingrese un precio válido.";
+            }
+        });
+    </script>
+</body>
+</html>

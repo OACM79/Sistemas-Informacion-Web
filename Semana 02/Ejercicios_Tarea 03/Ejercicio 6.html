@@ -1,0 +1,71 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Ejercicio 6: Hacer una página que, ingresando un monto de dinero que represente el costo de un producto, imprima el valor del 
+    mismo + IVA (10%) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 6</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contenedor {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Precio con IVA</h1>
+    <div id="contenedor">
+        <label for="costo">Costo del Producto:</label>
+        <input type="number" id="costo" placeholder="Ingrese el costo del producto">
+        <button id="calcular">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        document.getElementById('calcular').addEventListener('click', function() {
+            let costo = parseFloat(document.getElementById('costo').value);
+
+            if (!isNaN(costo)) {
+                let iva = costo * 0.10;
+                let precioFinal = costo + iva;
+
+                let mensaje = "El precio final con IVA (10%) es: " + precioFinal.toFixed(0);
+                document.getElementById('resultado').textContent = mensaje;
+            } else {
+                document.getElementById('resultado').textContent = "Por favor, ingrese un costo válido.";
+            }
+        });
+    </script>
+</body>
+</html>

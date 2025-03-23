@@ -1,0 +1,75 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Ejercicio 4: Desarrolla una página web interactiva que permita a los usuarios ingresar su nombre, apellido y edad. 
+    La página debe generar un mensaje de bienvenida personalizado que incluya la concatenación de los valores ingresados, mostrando 
+    un saludo al usuario de manera amigable -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 4</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contenedor {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #mensaje {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Bienvenido a mi Páguina Web!</h1>
+    <div id="contenedor">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" placeholder="Ingrese su apellido">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" placeholder="Ingrese su edad">
+        <button id="saludar">Saludar</button>
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        document.getElementById('saludar').addEventListener('click', function() {
+            let nombre = document.getElementById('nombre').value;
+            let apellido = document.getElementById('apellido').value;
+            let edad = document.getElementById('edad').value;
+
+            if (nombre && apellido && edad) {
+                let mensaje = "¡Hola " + nombre + " " + apellido + ", Tienes " + edad + " años." + "¡Bienvenido a mi Paguina Web.....!";
+                document.getElementById('mensaje').textContent = mensaje;
+            } else {
+                document.getElementById('mensaje').textContent = "Por favor, complete todos los campos.";
+            }
+        });
+    </script>
+</body>
+</html>

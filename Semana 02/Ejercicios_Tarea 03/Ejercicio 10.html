@@ -1,0 +1,95 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Ejercicio 10: Hacer una página Web que solicite al usuario dos fechas con formato (dd/mm/yyyy). Debe imprimir como resultado, en un 
+    único mensaje, el cálculo de la diferencia entre las fechas ingresadas. 
+    Validar el formato antes de procesar los datos indicando al usuario que debe cumplir con dicho formato.
+    Validar que la fecha no den resultados negativos -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 10</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contenedor {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Diferencia de Fechas</h1>
+    <div id="contenedor">
+        <label for="fecha1">Fecha 1 (dd/mm/yyyy):</label>
+        <input type="text" id="fecha1" placeholder="dd/mm/yyyy">
+        <label for="fecha2">Fecha 2 (dd/mm/yyyy):</label>
+        <input type="text" id="fecha2" placeholder="dd/mm/yyyy">
+        <button id="calcular">Calcular Diferencia</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        document.getElementById('calcular').addEventListener('click', function() {
+            let fecha1 = document.getElementById('fecha1').value;
+            let fecha2 = document.getElementById('fecha2').value;
+
+            if (!validarFormato(fecha1) || !validarFormato(fecha2)) {
+                document.getElementById('resultado').textContent = "Por favor, ingrese fechas en formato dd/mm/yyyy.";
+                return;
+            }
+
+            let date1 = convertirFecha(fecha1);
+            let date2 = convertirFecha(fecha2);
+
+            if (date1 && date2) {
+                let diferencia = Math.abs(date1 - date2);
+                let dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+                document.getElementById('resultado').textContent = "La diferencia entre las fechas es de " + dias + " días.";
+            } else {
+                document.getElementById('resultado').textContent = "Error al procesar las fechas.";
+            }
+        });
+
+        function validarFormato(fecha) {
+            let regex = /^\d{2}\/\d{2}\/\d{4}$/;
+            return regex.test(fecha);
+        }
+
+        function convertirFecha(fecha) {
+            let partes = fecha.split('/');
+            if (partes.length === 3) {
+                return new Date(partes[2], partes[1] - 1, partes[0]);
+            }
+            return null;
+        }
+    </script>
+</body>
+</html>
