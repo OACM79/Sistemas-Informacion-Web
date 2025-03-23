@@ -1,0 +1,61 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Ejercicio 1: Desarrolla una página web que permita a los usuarios convertir un monto en Guaraníes (Gs) a su equivalente en 
+    Dólares (USD) usando un valor de cambio ingresado por el usuario.Familiarizarse con la estructura básica de un documento HTML -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Guaraníes a Dólares</h1>
+        <label for="guaranies">Guaraníes (Gs):</label>
+        <input type="number" id="guaranies" placeholder="Ingrese el monto en Gs">
+        <label for="cambio">Tasa de Cambio (Gs/USD):</label>
+        <input type="number" id="cambio" placeholder="Ingrese la tasa de cambio">
+        <button id="convertir">Convertir</button>
+        <p id="resultado">Resultado: </p>
+    </div>
+
+    <script>
+        document.getElementById('convertir').addEventListener('click', function() {
+            let guaranies = document.getElementById('guaranies').value;
+            let cambio = document.getElementById('cambio').value;
+            let dolares = guaranies / cambio;
+            document.getElementById('resultado').textContent = 'Resultado: ' + dolares.toFixed(2) + ' USD';
+        });
+    </script>
+</body>
+</html>

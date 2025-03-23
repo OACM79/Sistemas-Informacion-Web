@@ -1,0 +1,66 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Ejercicio 3: Idem al ejercicio 2, pero de Fahrenheit a Celsius -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 3</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contenedor {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Fahrenheit a Celsius</h1>
+    <div id="contenedor">
+        <label for="fahrenheit">Grados Fahrenheit:</label>
+        <input type="number" id="fahrenheit" placeholder="Ingrese grados Fahrenheit">
+        <button id="convertir">Convertir</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        document.getElementById('convertir').addEventListener('click', function() {
+            let fahrenheit = parseFloat(document.getElementById('fahrenheit').value);
+            if (!isNaN(fahrenheit)) {
+                let celsius = (fahrenheit - 32) * 5/9;
+                document.getElementById('resultado').textContent = fahrenheit + " °F = " + celsius.toFixed(2) + " °C";
+            } else {
+                document.getElementById('resultado').textContent = "Por favor, ingrese un número válido.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- 
+    Maestría en Electrónica - Enfasis TIC
+	Materia: Sistemas de Información Web
+
+	Alumno: Oscar Aureliano Caballero Mendoza
+	CI: 2.540.533 
+    Ejercicio 2: Conversor de Temperatura: Celsius a Fahrenheit. Desarrolla una página web interactiva que permita a los usuarios convertir
+    una temperatura proporcionada en grados Celsius a su equivalente en grados Fahrenheit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contenedor {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Celsius a Fahrenheit</h1>
+    <div id="contenedor">
+        <label for="celsius">Grados Celsius:</label>
+        <input type="number" id="celsius" placeholder="Ingrese grados Celsius">
+        <button id="convertir">Convertir</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        document.getElementById('convertir').addEventListener('click', function() {
+            let celsius = parseFloat(document.getElementById('celsius').value);
+            if (!isNaN(celsius)) {
+                let fahrenheit = (celsius * 9/5) + 32;
+                document.getElementById('resultado').textContent = celsius + " °C = " + fahrenheit.toFixed(2) + " °F";
+            } else {
+                document.getElementById('resultado').textContent = "Por favor, ingrese un número válido.";
+            }
+        });
+    </script>
+</body>
+</html>
